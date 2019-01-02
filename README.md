@@ -1,6 +1,41 @@
 # Today I Learned
 .
 
+## GitHub - Command Line Notes 2019.01.02.
+1. `git clone https://github.com/whitejcme/Test.git`
+   - Clone repository into the current working directory
+2. make whatever changes in the local directory
+   1. modified already existing file, testfile1
+   2. created new file, testfile2
+3. change current working directory to local project
+4. `git status`
+   - will show that testfile1 has been modified and that testfile2 is untracked (needs to be added to include in what will be committed)
+5. `git add testfile2.md`
+   - add testfile2 to the list of files to commit to repository
+   - better yet, `git add .` to add all files in the directory to the list of files that needs to be committed (doing so will include both modified and newly created files)
+6. `git commit -m "added testfile2.md"`
+7. `git push origin master`
+   - at this point, both testfile1 and testfile2 will have been successfully updated on the GitHub remote repository (online)
+
+.
+
+1. Make changes directly on GitHub remote repository (online)
+   1. modified testfile1
+   2. created testfile3
+2. `git pull origin master` to download AND integrate the latest changes from the remote repository with the local project
+   1. (assuming that there aren't any merge conflicts to occur)
+
+.
+
+.
+
+
+
+
+
+
+
+
 ## Using GitHub - Command Line (via GitBash or Terminal)
 Pushing local project to a new remote repository:
 
