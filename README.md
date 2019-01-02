@@ -23,3 +23,4 @@ Other:
 - `git checkout` => go to specified previous snapshot
 - `git reset --hard`
 - `git pull`
+- `git clone https://github.com/sspy1/python_basic.git` => clone files in mentioned github address into current working directory
