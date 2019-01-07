@@ -32,6 +32,12 @@
 
 
 
+## add another remote repository
+`git remote add [nickname] [repository url]`
+
+- where _nickname_ replaces "origin"
+- to push to this new remote repository (when `nickname` is `secondary`): `git push -u secondary master` (include `-u` the first time only)
+
 
 
 
@@ -44,7 +50,7 @@ Pushing local project to a new remote repository:
 2. `git init` => initialize the local directory as a Git repository
 3. `git status` => check repository commitment status
 4. `git remote add origin https://github.com/whitejcme/TIL.git` => add the URL for the remote repository where the local repository will be pushed
-    - `git remote -v` => check remote repository URL
+    - `git remote -v` => list all remote repositories and the corresponding URL
     - `git remote remove origin` => delete remote repository URL
 5.  `git push -u origin master ` & login to GitHub via pop-up
     - `git push origin master` => 
