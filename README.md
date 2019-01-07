@@ -38,9 +38,27 @@
 - where _nickname_ replaces "origin"
 - to push to this new remote repository (when `nickname` is `secondary`): `git push -u secondary master` (include `-u` the first time only)
 
+.
+
+## create new branch
+- `git branch` => 현재 존재하는 모든 세계들 출력 (default: `master`) 
+    - the one written in green is the branch we're currently in
+- `git branch [name_of_new_branch]`  => create new branch under _nameofnewbranch_
+- `git checkout [nameofbranch]` => switch to _nameofbranch_ branch
+
+.
+
+## Merging different branches
+- `git merge [branchToMerge]`
+    - pwd는 인수하는 곳이어야 한다 (e.g. master)
+    - ex) when merging the `newWorld` branch into the `master` branch:
+        1. `git checkout master`
+        2. `git merge newWorld`
+
+.
 
 
-
+.
 
 ## Using GitHub - Command Line (via GitBash or Terminal)
 Pushing local project to a new remote repository:
