@@ -45,6 +45,7 @@
     - the one written in green is the branch we're currently in
 - `git branch [name_of_new_branch]`  => create new branch under _nameofnewbranch_
 - `git checkout [nameofbranch]` => switch to _nameofbranch_ branch
+- `git checkout -b [nameofnewbranch]` => switch to new branch right after creating it
 
 .
 
@@ -56,6 +57,9 @@
         2. `git merge newWorld`
 
 .
+
+## .gitignore
+- which files/folders to exclude from git commits
 
 
 .
