@@ -64,6 +64,15 @@
 
 .
 
+## git rm -r --cached fileName.txt
+- does not update changes when pushing to Git (버전 관리는 그만하고 싶을 때)
+
+
+
+
+
+.
+
 ## Using GitHub - Command Line (via GitBash or Terminal)
 Pushing local project to a new remote repository:
 
