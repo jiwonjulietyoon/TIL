@@ -6,7 +6,7 @@
 
 
 ## Portfolio / Personal Page
-- [Jiwon Juliet Yoon](https://github.com/jiwonjulietyoon/jiwonjulietyoon.github.io)
+- [Jiwon Juliet Yoon](https://github.com/jiwonjulietyoon/jiwonjulietyoon.github.io) (In Progress!)
 
 
 
