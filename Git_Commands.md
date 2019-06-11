@@ -63,6 +63,12 @@
 - does not update changes when pushing to Git (버전 관리는 그만하고 싶을 때)
 
 
+## Git Reset
+- git config —system —unset credential.helper
+- git config --global --unset credential.helper
+- git config --global --unset-all user.name
+- git config --global --unset-all user.email
+
 
 
 
