@@ -1,4 +1,4 @@
-## Git Clone ??
+## Git Clone !!
 
 `git clone [repositoryURL] [directory]`
 
