@@ -36,6 +36,30 @@
 
 <br>
 
+## Front-End Web Notes (HTML, CSS, JS)
+
+[Building a Chatbot with Slack, Firestore, and Vue.js](<https://github.com/jiwonjulietyoon/FrontEnd_Notes/blob/master/Vue_Slack_Firestore_Integration.md>)
+
+> This post mostly focuses on the front-end web aspect of building a KakaoTalk clone chatbot, as well as the overall process of integrating Slack, Firestore, and Vue.js.
+
+[Animated Buttons with CSS](<https://github.com/jiwonjulietyoon/FrontEnd_Notes/blob/master/CSS_Buttons.html>)
+
+> Various button designs with animated hover/click effects.
+>
+> Written in HTML format — please download and open via browser (Chrome recommended)
+
+[CSS Selectors](<https://github.com/jiwonjulietyoon/FrontEnd_Notes/blob/master/CSS_Selectors.md>)
+
+[Vue.js, SCSS, UI/UX](<https://github.com/jiwonjulietyoon/FrontEnd_Notes/blob/master/VUE_UIUX%20(Kor).md>)
+
+> Personal UI/UX tips when working with Vue.js projects
+>
+> Written in Korean
+
+<br>
+
+<br>
+
 ## Python Notes
 
 [Built-in Functions](<https://github.com/jiwonjulietyoon/Python_Notes/blob/master/built-in-functions.md>)
@@ -109,26 +133,6 @@
 [ORM and Flask Alchemy](<https://github.com/jiwonjulietyoon/Database_Notes/blob/master/ORM_FlaskAlchemy.md>)
 
 > basic concepts
-
-<br>
-
-<br>
-
-## Front-End Web Notes (HTML, CSS, JS)
-
-[Animated Buttons with CSS](<https://github.com/jiwonjulietyoon/FrontEnd_Notes/blob/master/CSS_Buttons.html>)
-
-> Various button designs with animated hover/click effects.
->
-> Written in HTML format — please download and open via browser (Chrome recommended)
-
-[CSS Selectors](<https://github.com/jiwonjulietyoon/FrontEnd_Notes/blob/master/CSS_Selectors.md>)
-
-[Vue.js, SCSS, UI/UX](<https://github.com/jiwonjulietyoon/FrontEnd_Notes/blob/master/VUE_UIUX%20(Kor).md>)
-
-> Personal UI/UX tips when working with Vue.js projects
->
-> Written in Korean
 
 <br>
 
