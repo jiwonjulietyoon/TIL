@@ -4,7 +4,7 @@
 
 > Below is a list of notable pages from my repositories :)
 >
-> Please note that my notes are bilingual — written mostly in English, and occasionally in Korean.
+> Please note that my posts are bilingual — written mostly in English, and occasionally in Korean.
 
 <br>
 
@@ -40,7 +40,7 @@
 
 [Building a Chatbot with Slack, Firestore, and Vue.js](<https://github.com/jiwonjulietyoon/FrontEnd_Notes/blob/master/Vue_Slack_Firestore_Integration.md>)
 
-> This post mostly focuses on the front-end web aspect of building a KakaoTalk clone chatbot, as well as the overall process of integrating Slack, Firestore, and Vue.js.
+> This post mostly focuses on the front-end web aspect of building a KakaoTalk clone chatbot. Includes a step-by-step demonstration of integrating Slack, Firestore, and Vue.js.
 
 [Animated Buttons with CSS](<https://github.com/jiwonjulietyoon/FrontEnd_Notes/blob/master/CSS_Buttons.html>)
 
