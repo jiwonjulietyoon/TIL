@@ -36,11 +36,23 @@
 
 <br>
 
-## Front-End Web Notes (HTML, CSS, JS)
+## Side Projects
+
+(usually deals with specific aspects/components of a bigger project)
 
 [Building a Chatbot with Slack, Firestore, and Vue.js](<https://github.com/jiwonjulietyoon/FrontEnd_Notes/blob/master/Vue_Slack_Firestore_Integration.md>)
 
 > This post mostly focuses on the front-end web aspect of building a KakaoTalk clone chatbot. Includes a step-by-step demonstration of integrating Slack, Firestore, and Vue.js.
+
+[Interactive Slackbots](<https://github.com/jiwonjulietyoon/Welcome/blob/master/Slack_Interactive_Bots.md>) (in progress)
+
+> Code demonstration of adding buttons and dropdown lists to Slackbot messages.
+
+<br>
+
+<br>
+
+## Front-End Web (HTML, CSS, JS)
 
 [Animated Buttons with CSS](<https://github.com/jiwonjulietyoon/FrontEnd_Notes/blob/master/CSS_Buttons.html>)
 
@@ -60,7 +72,7 @@
 
 <br>
 
-## Python Notes
+## Python
 
 [Built-in Functions](<https://github.com/jiwonjulietyoon/Python_Notes/blob/master/built-in-functions.md>)
 
@@ -98,7 +110,7 @@
 
 <br>
 
-## Django & Flask Notes
+## Django & Flask
 
 [Intro to Django](<https://github.com/jiwonjulietyoon/Django_Notes/blob/master/README.md>)
 
