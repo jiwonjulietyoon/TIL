@@ -44,7 +44,7 @@
 
 > This post mostly focuses on the front-end web aspect of building a KakaoTalk clone chatbot. Includes a step-by-step demonstration of integrating Slack, Firestore, and Vue.js.
 
-[Interactive Slackbots](<https://github.com/jiwonjulietyoon/Welcome/blob/master/Slack_Interactive_Bots.md>) (in progress)
+[Interactive Slackbots](<https://github.com/jiwonjulietyoon/Welcome/blob/master/Slack_Interactive_Bots.md>)
 
 > Code demonstration of adding buttons and dropdown lists to Slackbot messages.
 

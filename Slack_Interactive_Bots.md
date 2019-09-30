@@ -14,6 +14,8 @@ But, instead of my Slackbot deleting the data right away, I want it to ask the u
 
 ### Process Overview (`app.py`)
 
+![](./img/slack_interactive_components.png)
+
 1. User mentions Slackbot and enters a command message
 2. The `@slack_events_adaptor.on("app_mention")` function is triggered, calling the mentioned Slackbot to action.
 3. The `determine_command()` function determines which action the user wants (i.e. delete a data record).
@@ -92,9 +94,9 @@ def message_actions():
         id = form_json.get('original_message').get('attachments')[0].get('actions')[0].get('name')
         if selection == "delete":
             access_DB("delete_review", id)
-            confirm_result = f":heavy_check_mark: id {id} 리뷰 삭제 완료"
-        else:  # 삭제 취소
-            confirm_result = f":x: id {id} 리뷰 삭제 취소"
+            confirm_result = f":heavy_check_mark: id {id} Review has been deleted"
+        else:  # Cancel delete
+            confirm_result = f":x: id {id} Delete request canceled"
         response = slack_web_client.api_call(
             "chat.update",
             json = {
@@ -178,10 +180,151 @@ def index():
 
 if __name__ == '__main__':
     app.run()
-
 ```
 
+> - `attachments_json` : include button options here
+>   - `attachments_json["actions"][0]["name"]` : include any additional info/data regarding the button action that you'd like to transfer over to `message_actions()`, where the data can be accessed as `form_json.get('original_message').get('attachments')[0].get('actions')[0].get('name')`.
+> - `callback_id` : acts as the identifier of which set of buttons the user interacted with (i.e Did the user just interact with the delete confirmation buttons or the update confirmation buttons? ). Specify a different `callback_id` for each set of buttons.
 
+<br>
+
+### app.py (Interactive Dropdown Lists)
+
+> This Slackbot will provide a dropdown list of movie titles that include the user's input (movie title keyword).
+>
+> When the user selects a specific movie, Slackbot will either recommend or not recommend the movie based on movie reviews.
+>
+> The following is a very brief and condensed code demonstration.
+
+```python
+import os
+import json
+import crawling
+
+from threading import Thread
+from flask import Flask, request, Response, make_response, jsonify
+from slack import WebClient
+from slackeventsapi import SlackEventAdapter
+from http import HTTPStatus
+
+# slack 연동 정보 입력 부분
+SLACK_TOKEN = os.getenv("SLACK_TOKEN")
+SLACK_SIGNING_SECRET = os.getenv("SLACK_SIGNING_SECRET")
+SLACK_VERIFICATION_TOKEN = os.getenv("SLACK_VERIFICATION_TOKEN")
+
+app = Flask(__name__)
+
+slack_events_adaptor = SlackEventAdapter(SLACK_SIGNING_SECRET, "/listening", app)
+slack_web_client = WebClient(token=SLACK_TOKEN)
+
+
+# The endpoint Slack will load your menu options from
+@app.route("/slack/message_options", methods=["POST"])
+def message_options():
+    # Parse the request payload
+    form_json = json.loads(request.form["payload"])
+
+    items = crawling.getInfoFromNaver(form_json["name"])
+
+    # Dictionary of menu options which will be sent as JSON
+    menu_options = {
+        "options": ......
+    }
+    
+    # Load options dict as JSON and respond to Slack
+    return Response(json.dumps(menu_options), mimetype='application/json')
+
+
+# The endpoint Slack will send the user's menu selection to
+@app.route("/slack/message_actions", methods=["POST"])
+def message_actions():
+    # Parse the request payload
+    form_json = json.loads(request.form["payload"])
+
+    channel = form_json.get("channel").get("id")
+
+    slack_web_client.api_call(
+        "chat.update",
+        json = {
+            "channel": channel,
+            "text": "Searching movie..",
+            "ts": form_json["message_ts"],
+            "attachments": [{
+                "type" : "image",
+                "fields": [],
+                "image_url": "https://i.imgur.com/pimbWIv.gif"
+                }]
+        }
+    )
+
+    # Check to see what the user's selection was and update the message accordingly
+    selection = form_json["actions"][0]["selected_options"][0]["value"]
+    
+    # crawling.findItemByInput(selection)
+    code, title = selection.split(' ',1)
+    code, title, point, ratio = search_DB(code, title.replace('&amp;','&'))
+    if point :
+        text = f"'{title}' is recommended by {ratio *100 :.2f}%."
+    else :
+        text = f"'{title}' is NOT recommended by {(1- ratio) *100 :.2f}%."
+
+    response = slack_web_client.api_call(
+        "chat.update",
+        json = {
+            "channel": channel,
+            "text": text,
+            "ts": form_json["message_ts"],
+            "attachments": [{
+                "text" : f"https://movie.naver.com/movie/bi/mi/basic.nhn?code={code}"
+            }]
+        }
+    )
+    # Send an HTTP 200 response with empty body so Slack knows we're done here
+    return make_response("", 200)
+
+
+# Triggered when Slackbot is mentioned
+@slack_events_adaptor.on("app_mention")
+def app_mentioned(event_data):
+    channel = event_data["event"]["channel"]
+    bot_name = event_data['authed_users'][0]
+    text = event_data["event"]["text"].replace(f"<@{bot_name}>", "")
+
+    items = crawling.getInfoFromNaver(text)
+    
+    attachments_json = [{
+        "type": "section",
+        "fallback": "",
+        "color": "#3AA3E3",
+        "attachment_type": "default",
+        "callback_id": "message_options",
+        "actions": [
+            {
+                "name": text,
+                "text": "Pick a Movie",
+                "type": "select",
+                "data_source": "external"
+            }
+        ]
+    }]
+    
+    slack_web_client.api_call(
+        "chat.postMessage",
+        json = {
+            'channel': channel,
+            'text': 'Please select a movie :)',
+            'attachments': attachments_json
+        })
+
+        
+@app.route("/", methods=["GET"])
+def index():
+    return "<h1>Server is ready.</h1>"
+
+
+if __name__ == '__main__':
+    app.run()
+```
 
 <br>
 
@@ -191,7 +334,7 @@ if __name__ == '__main__':
 
 2. Run ngrok.exe, and in the ngrok terminal run `ngrok http 5000`. Copy the http address.
 
-3. Visit your Slackbot (Slack API App) Features - Event Subscriptions. Activate 'Enable Events', and enter the above http address + `/listening` as the Request URL, e.g`http://522f337b.ngrok.io/listening`. In the 'Subscribe to Bot Events' section, add the `app_mention` event. Save changes.
+3. Visit your Slackbot (Slack API App) Features - Event Subscriptions. Activate 'Enable Events', and enter the above http address + `/listening` as the Request URL, e.g `http://522f337b.ngrok.io/listening`. In the 'Subscribe to Bot Events' section, add the `app_mention` event. Save changes.
 
    > This feature acts as the event listener for Slackbot mentions.
 
@@ -203,7 +346,7 @@ if __name__ == '__main__':
 
    - Activate 'Message Menus', and enter the http addres + `/slack/message_options` as the Options Load URL.
 
-     > This feature supports dynamic options for buttons and dropdown lists. You won't need this if you are going to hard-code your options.
+     > This feature supports dynamic options for buttons and dropdown lists (include `"data_source": "external"` in `attachments_json` - `actions`). You won't need this if you are going to hard-code your options.
 
 
 
