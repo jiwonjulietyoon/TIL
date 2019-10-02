@@ -5,7 +5,7 @@
 - _directory_ is optional. If omitted, git will create a new directory (under the repository name) in the current working directory.
 - If _directory_ is specified, git will clone the repository there without creating any new directories
 
-
+<br>
 
 ## Add Remote Repository
 
@@ -14,9 +14,7 @@
 - where _nickname_ replaces "origin"
 - to push to this new remote repository (when `nickname` is `secondary`): `git push -u secondary master` (include `-u` the first time only)
 
-
-
-
+<br>
 
 ## Git Branch
 
@@ -49,18 +47,32 @@
   - 1. `git checkout master` (move to `master` branch)
     2. `git merge newWorld`
 
+<br>
 
+## Undo git force push
+
+`git reflog`, and check which HEAD you want to restore to.
+
+e.g) `git reset --hard HEAD@{4}`
+
+This should restore all your commits lost due to force pushing.
+
+
+
+<br>
 
 ## .gitignore
 
 - which files/folders to exclude from git commits
 - https://gitignore.io/api/django
 
-.
+<br>
 
 ## git rm -r --cached fileName.txt
 
 - does not update changes when pushing to Git (버전 관리는 그만하고 싶을 때)
+
+<br>
 
 
 ## Git Reset
@@ -69,7 +81,9 @@
 - git config --global --unset-all user.name
 - git config --global --unset-all user.email
 
+<br>
 
+<br>
 
 
 ## GitHub - Command Line Notes 2019.01.02.
@@ -89,7 +103,7 @@
 7. `git push origin master`
    - at this point, both testfile1 and testfile2 will have been successfully updated on the GitHub remote repository (online)
 
-.
+<br>
 
 1. Make changes directly on GitHub remote repository (online)
    1. modified testfile1
@@ -97,9 +111,9 @@
 2. `git pull origin master` to download AND integrate the latest changes from the remote repository with the local project
    1. (assuming that there aren't any merge conflicts to occur)
 
+<br>
 
-
-
+<br>
 
 ## Using GitHub - Command Line (via GitBash or Terminal)
 
