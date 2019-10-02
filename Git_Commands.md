@@ -55,6 +55,8 @@
 
 e.g) `git reset --hard HEAD@{4}`
 
+And then `git push -f origin [BRANCH]`
+
 This should restore all your commits lost due to force pushing.
 
 
