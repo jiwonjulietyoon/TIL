@@ -12,7 +12,7 @@
 
 ## Personal Web Developer Portfolio
 
-[jiwonjulietyoon.com](https://www.jiwonjulietyoon.com/) | [GitHub Repo](https://github.com/jiwonjulietyoon/jiwonjulietyoon.github.io)
+[jiwonjulietyoon.com](https://www.jiwonjulietyoon.com/) | [GitHub Repo](https://github.com/jiwonjulietyoon/portfolio)
 
 > Made with Vue.js, my portfolio website was a personal project for artistic creativity. I crafted animated drawings with CSS and JavaScript :european_castle:
 >
