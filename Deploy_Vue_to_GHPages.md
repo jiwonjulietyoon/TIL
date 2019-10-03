@@ -9,7 +9,7 @@
 
 <br>
 
-#### Step 1) In local project repository:
+### Step 1) In local project repository:
 
 1. Create a new local branch named `gh-pages` ==> `git checkout -b gh-pages`
 
@@ -37,13 +37,13 @@
 
    - Check GitHub to make sure that the `gh-pages` branch of your repository now has css, img, js folders and index.html, favicon.ico files (instead of public, src, and other Vue CLI files)
 
-#### Step 2) In GitHub repository:
+### Step 2) In GitHub repository:
 
 1. Go to respository settings.
 
 <br>
 
-   > <img src="./img/deploy_vue_ghpages_1.png" width=500>
+   >  <img src="./img/deploy_vue_ghpages_1.png" width=500>
 
 <br>
 
@@ -51,7 +51,7 @@
 
 <br>
 
-   > <img src="./img/deploy_vue_ghpages_2.png" width=500>
+   >  <img src="./img/deploy_vue_ghpages_2.png" width=500>
 
 <br>
 
