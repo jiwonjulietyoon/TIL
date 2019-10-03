@@ -41,11 +41,19 @@
 
 1. Go to respository settings.
 
-   <img align="left" src="./img/deploy_vue_ghpages_1.png" width=500>
+<br>
+
+   > <img src="./img/deploy_vue_ghpages_1.png" width=500>
+
+<br>
 
 2. Scroll down to the GitHub Pages section (towards the bottom), and select `gh-pages branch` as the Source.
 
-   <img align="left" src="./img/deploy_vue_ghpages_2.png" width=500>
+<br>
+
+   > <img src="./img/deploy_vue_ghpages_2.png" width=500>
+
+<br>
 
 3. Done!
 
