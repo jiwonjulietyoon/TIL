@@ -32,6 +32,14 @@
 >
 > Click [here](<https://drive.google.com/drive/u/1/folders/1Z4dabnGbjMMicWcdYpWAMcNFWNLyjGBl>) for a brief overview
 
+[Kakao-Clone Chatbot with Python/Flask, Slack, Firebase, Vue CLI](<https://github.com/jiwonjulietyoon/kakao-slackbot>) ([Demo](https://jiwonjulietyoon.github.io/kakao-slackbot/))
+
+> Front-end web aspect of cloning KakaoTalk with Vue.js and Firebase (chatbot built on Python, Flask, and Slack API, although this was not the focus of this repo).
+>
+> Related post:
+>
+> - [Building a Chatbot with Slack, Firestore, and Vue.js](<https://github.com/jiwonjulietyoon/FrontEnd_Notes/blob/master/Vue_Slack_Firestore_Integration.md>) : Step-by-step demonstration of integrating Slack, Firestore, and Vue.js.
+
 <br>
 
 <br>
@@ -39,10 +47,6 @@
 ## Side Projects
 
 (usually deals with specific aspects/components of a bigger project)
-
-[Building a Chatbot with Slack, Firestore, and Vue.js](<https://github.com/jiwonjulietyoon/FrontEnd_Notes/blob/master/Vue_Slack_Firestore_Integration.md>)
-
-> This post mostly focuses on the front-end web aspect of building a KakaoTalk clone chatbot. Includes a step-by-step demonstration of integrating Slack, Firestore, and Vue.js.
 
 [Interactive Slackbots](<https://github.com/jiwonjulietyoon/Welcome/blob/master/Slack_Interactive_Bots.md>)
 
