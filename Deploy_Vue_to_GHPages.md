@@ -31,11 +31,13 @@
 
    - `dist/` and `vue.config.js` need NOT be pushed to the `master` branch
 
-6. Run `git add dist && git commit -m "Initial dist subtree commit`.
+6. Run `git add dist && git commit -m "Initial dist subtree commit"`.
 
 7. Run `git subtree push --prefix dist origin gh-pages`.
 
    - Check GitHub to make sure that the `gh-pages` branch of your repository now has css, img, js folders and index.html, favicon.ico files (instead of public, src, and other Vue CLI files)
+
+<br>
 
 ### Step 2) In GitHub repository:
 
@@ -55,7 +57,13 @@
 
 <br>
 
-3. Done!
+### Step 3) Back in local repository:
+
+1. Checkout to master branch => `git checkout master`
+2. Delete branch `gh-pages` => `git branch -d gh-pages`
+3. Delete this branch from remote repository as well (on GitHub)
+4. Add `dist/` and `vue.config.js` to `.gitignore` (uncomment `dist/`)
+5. Any further changes made to project code should be pushed to the master branch, as normal.
 
 <br>
 
@@ -63,13 +71,10 @@
 
 ### Afterwards...
 
-1. Checkout to master branch.
-2. Add `dist/` and `vue.config.js` to `.gitignore` (uncomment `dist/`)
-3. Any changes made to project code should be push to the master branch, as normal.
-4. When further deploying such changes to GitHub Pages, repeat the following steps:
-   1. Run `git checkout gh-pages` and then `git pull origin master`
-   2. Comment out `dist/` and `vue.config.js` in `.gitignore`
-   3. Run `npm run build`
-   4. Run `git add dist && git commit -m "Deploy"`
-   5. Run `git subtree push --prefix dist origin gh-pages`
+When further deploying such changes to GitHub Pages, repeat the following steps:
+1. Run `git checkout -b gh-pages` (Newly create branch `gh-pages`)
+2. Comment out `dist/` and `vue.config.js` in `.gitignore`
+3. Run `npm run build`
+4. Run `git add dist && git commit -m "Deploy"`
+5. Run `git subtree push --prefix dist origin gh-pages`
 
