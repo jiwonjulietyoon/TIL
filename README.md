@@ -32,7 +32,7 @@
 >
 > Click [here](<https://drive.google.com/drive/u/1/folders/1Z4dabnGbjMMicWcdYpWAMcNFWNLyjGBl>) for a brief overview
 
-[Kakao-Clone Chatbot with Python/Flask, Slack, Firebase, Vue CLI](<https://github.com/jiwonjulietyoon/kakao-slackbot>) ([Demo](https://jiwonjulietyoon.github.io/kakao-slackbot/))
+[Kakao-Clone Chatbot with Python/Flask, Slack, Firebase, Vue CLI](<https://github.com/jiwonjulietyoon/Kakao-Slackbot>) ([Demo](https://kakao-slackbot.firebaseapp.com//))
 
 > Front-end web aspect of cloning KakaoTalk with Vue.js and Firebase (chatbot built on Python, Flask, and Slack API, although this was not the focus of this repo).
 >
