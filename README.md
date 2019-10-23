@@ -38,7 +38,7 @@
 >
 > Related post:
 >
-> - [Building a Chatbot with Slack, Firestore, and Vue.js](<https://github.com/jiwonjulietyoon/FrontEnd_Notes/blob/master/Vue_Slack_Firestore_Integration.md>) : Step-by-step demonstration of integrating Slack, Firestore, and Vue.js.
+> - [Building a Chatbot with Slack, Firestore, and Vue.js](<https://github.com/jiwonjulietyoon/Kakao-Slackbot/blob/master/documentation/Slack_Firestore_Integration.md>) : Step-by-step demonstration of integrating Slack, Firestore, and Vue.js.
 
 <br>
 
