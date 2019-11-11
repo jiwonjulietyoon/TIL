@@ -40,6 +40,12 @@
 >
 > - [Building a Chatbot with Slack, Firestore, and Vue.js](<https://github.com/jiwonjulietyoon/Kakao-Slackbot/blob/master/documentation/Slack_Firestore_Integration.md>) : Step-by-step demonstration of integrating Slack, Firestore, and Vue.js.
 
+[Recruit Map](https://github.com/jiwonjulietyoon/Recruit_Map) ([Demo](http://www.recruitmap.ninja/))
+
+> Recruiting companies & open job positions displayed on a map
+>
+> Nuxt.js, Vue.js, Vuex, Google Maps API, Python, Django, AWS, MySQL, ...
+
 <br>
 
 <br>
